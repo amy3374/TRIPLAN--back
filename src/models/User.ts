@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt"
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 interface User{
     name : string;
