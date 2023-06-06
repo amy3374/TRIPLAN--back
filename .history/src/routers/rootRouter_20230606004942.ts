@@ -16,6 +16,6 @@ rootRouter.get("/", (req, res) => {
 rootRouter.route("/checkUsername").post(postCheckUsername);
 rootRouter.route("/join").get(getJoin).post(postJoin);
 rootRouter.route("/login").get(getLogin).post(postLogin);
-rootRouter.route("/save/:username").get(getSave).post(postSave);
+rootRouter.route("/save/:id").get(getSave).post(postSave);
 
 export default rootRouter;

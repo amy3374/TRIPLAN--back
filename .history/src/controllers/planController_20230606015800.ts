@@ -9,6 +9,8 @@ export const getSave = async (req: any, res: any) => {
 export const postSave = async (req: any, res: any) => {
   const { plan, des, username, schedule, baggageList } = req.body;
 
+  console.log(req.data);
+
   try {
     await Plan.create({
       username,

@@ -13,19 +13,13 @@ interface PlanData {
 }
 
 interface Plan {
-  username: string;
   plan: PlanData;
   des: string;
-  schedule: string;
-  baggageList: ListItem[];
 }
 
 const planSchema = new mongoose.Schema<Plan>({
-  username: { type: String, required: true },
   des: { type: String, required: true },
   plan: { type: {}, required: true },
-  schedule: { type: String, required: true },
-  baggageList: { type: [], required: true },
 });
 
 const Plan = mongoose.model("Plan", planSchema);
