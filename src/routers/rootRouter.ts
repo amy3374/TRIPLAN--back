@@ -6,7 +6,7 @@ import {
   postLogin,
   postCheckUsername,
 } from "../controllers/userController";
-import { getMyPlan, getSave, postSave } from "../controllers/planController";
+import {  getMyPlan, getSave,  postMyPlan,  postSave } from "../controllers/planController";
 
 const rootRouter = express.Router();
 
@@ -17,7 +17,7 @@ rootRouter.route("/checkUsername").post(postCheckUsername);
 rootRouter.route("/join").get(getJoin).post(postJoin);
 rootRouter.route("/login").get(getLogin).post(postLogin);
 rootRouter.route("/save/:username").get(getSave).post(postSave);
-rootRouter.route("/save/:username/:id").get(getMyPlan)
+rootRouter.route("/save/:username/:id").get(getMyPlan).post(postMyPlan)
 
 
 export default rootRouter;
