@@ -12,7 +12,7 @@ import {
   postMyPlan,
   postSave,
 } from "../controllers/planController";
-import { getReview, postReview } from "../controllers/reviewControlloer";
+import { postReview } from "../controllers/reviewControlloer";
 
 const rootRouter = express.Router();
 
@@ -24,6 +24,6 @@ rootRouter.route("/join").get(getJoin).post(postJoin);
 rootRouter.route("/login").get(getLogin).post(postLogin);
 rootRouter.route("/save/:username").get(getSave).post(postSave);
 rootRouter.route("/save/:username/:id").get(getMyPlan).post(postMyPlan);
-rootRouter.route("/review/:id").get(getReview).post(postReview);
+rootRouter.route("/review/:id").post(postReview);
 
 export default rootRouter;
