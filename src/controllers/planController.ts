@@ -27,8 +27,8 @@ export const postSave = async (req: any, res: any) => {
 };
 export const getMyPlan = async(req:any,res:any)=>{
   const id=req.params.id
- // console.log("id",id)
-  const planDetail = await Plan.findOne({"_id": id });
+  console.log("id",id)
+  const planDetail = await Plan.findOne({_id: id });
   console.log("planDetail",planDetail)
   return res.status(200).send({ status: 200, planDetail});
 }
@@ -51,3 +51,41 @@ export const postMyPlan=async(req:any,res:any)=>{
     });
   }
 }
+export const getEdit = async(req:any,res:any)=>{
+  const id  = req.params.id;
+  const editedPlan = await Plan.findById(id);
+  if (!editedPlan) {
+    return res.status(404).send({
+      status: 404,
+      errorMessage: "not founded"
+    });
+  }
+  return res.status(200).send({ status: 200 });
+}
+export const postEdit=async(req:any,res:any)=>{
+  const id = req.params.id;
+  const {plan,baggageList} = req.body;
+  const edit = await Plan.exists({ _id: id });
+  if (!edit) {
+    return res.status(404).send({
+      status: 404,
+      errorMessage: "POST ERROR"
+    });
+  }
+  console.log(plan)
+   await Plan.findByIdAndUpdate({_id:id}, {
+    plan,
+    baggageList,
+  });
+}
+
+export const deleteMyPlan=async(req:any,res:any,error:any)=>{
+  const id = req.params.id;
+  console.log(id);
+  
+  try{
+
+    await Plan.deleteOne({_id:id})
+  }catch (error: any) {
+    console.log(error);}
+  }
