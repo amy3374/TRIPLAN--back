@@ -49,6 +49,7 @@ export const postLogin = async (req:any,res:any) => {
       }
   const ok = await bcrypt.compare(password, user.password);
   if (!ok) {
+    console.log(req.session)
     return res.status(400).send({ status:400,errorMessage: "An account with this username does not exists."
     });
   }else{
