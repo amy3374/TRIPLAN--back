@@ -72,14 +72,14 @@ export const postEdit = async (req: any, res: any) => {
       errorMessage: "POST ERROR",
     });
   }
-  await Plan.findByIdAndUpdate(
+
+  return await Plan.findByIdAndUpdate(
     { _id: id },
     {
       plan,
       baggageList,
     }
   );
-  return res.status(200).send();
 };
 
 export const deleteMyPlan = async (req: any, res: any, error: any) => {

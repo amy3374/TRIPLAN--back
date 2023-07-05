@@ -72,6 +72,7 @@ export const postEdit = async (req: any, res: any) => {
       errorMessage: "POST ERROR",
     });
   }
+
   await Plan.findByIdAndUpdate(
     { _id: id },
     {
@@ -79,7 +80,6 @@ export const postEdit = async (req: any, res: any) => {
       baggageList,
     }
   );
-  return res.status(200).send();
 };
 
 export const deleteMyPlan = async (req: any, res: any, error: any) => {
