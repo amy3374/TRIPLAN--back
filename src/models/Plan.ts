@@ -13,7 +13,6 @@ interface PlanData {
 }
 
 interface Plan {
-  // id:string;
   username: string;
   plan: PlanData;
   des: string;
@@ -22,7 +21,6 @@ interface Plan {
 }
 
 const planSchema = new mongoose.Schema<Plan>({
-  // id:{type:String,required:true},
   username: { type: String, required: true },
   des: { type: String, required: true },
   plan: { type: {}, required: true },

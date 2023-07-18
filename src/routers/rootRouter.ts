@@ -7,14 +7,11 @@ import {
   postCheckUsername,
 } from "../controllers/userController";
 
-import { getReview, postReview } from "../controllers/reviewControlloer";
-import {  deleteMyPlan, getEdit, getMyPlan, getSave,  postEdit,  postMyPlan,  postSave } from "../controllers/planController";
+import { getReview, postReview } from "../controllers/reviewController";
+import {  deleteMyPlan, getMyPlan, getSave,  postEdit,  postMyPlan,  postSave } from "../controllers/planController";
 
 const rootRouter = express.Router();
 
-rootRouter.get("/", (req, res) => {
-  res.send("1111");
-});
 rootRouter.route("/checkUsername").post(postCheckUsername);
 rootRouter.route("/join").get(getJoin).post(postJoin);
 rootRouter.route("/login").get(getLogin).post(postLogin);
