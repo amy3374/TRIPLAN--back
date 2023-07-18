@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server",
-    "dev": "nodemon --watch \"*.ts\" --exec \"ts-node\" ./src/init.ts"
+    "dev": "nodemon --watch \"*.ts\" --exec \"ts-node\" ./src/init.ts",
+    "build:server":"babel src -d build"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +26,8 @@
     "typescript": "^5.0.4"
   },
   "devDependencies": {
+    "@babel/cli": "^7.22.9",
+    "@babel/core": "^7.22.9",
     "@types/bcrypt": "^5.0.0",
     "@types/express-session": "^1.17.7",
     "nodemon": "^2.0.22",
